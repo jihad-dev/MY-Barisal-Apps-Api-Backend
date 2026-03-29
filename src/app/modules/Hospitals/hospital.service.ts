@@ -1,4 +1,4 @@
-// hospital.service.ts
+
 import Hospital from './hospital.model';
 import { IHospital } from './hospital.interface';
 import AppError from '../../errors/AppError';
