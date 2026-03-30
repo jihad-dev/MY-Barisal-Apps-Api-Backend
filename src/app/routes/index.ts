@@ -4,6 +4,7 @@ import { UserRoutes } from "../modules/user/user.route";
 import { AuthRoutes } from "../modules/auth/auth.route";
 import { HospitalRoutes } from "../modules/Hospitals/hospital.route";
 import { AmbulanceRoutes } from "../modules/Ambulance/ambulance.route";
+import { NewsRoutes } from "../modules/News/news.routes";
 
 const router = Router();
 
@@ -20,8 +21,14 @@ const moduleRoutes = [
         path: "/hospitals",
         route: HospitalRoutes,
     },
-    { path: '/ambulances', 
-        route: AmbulanceRoutes },
+    {
+        path: '/ambulances',
+        route: AmbulanceRoutes
+    },
+    {
+        path: '/news',
+        route: NewsRoutes
+    },
 
 ];
 
