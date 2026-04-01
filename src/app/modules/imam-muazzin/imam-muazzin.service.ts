@@ -25,12 +25,6 @@ const getAllImamMuazzin = async (query: Record<string, unknown>) => {
   return await ImamMuazzin.find(filter).sort({ createdAt: -1 });
 };
 
-// ── একটা দেখা ──
-const getSingleImamMuazzin = async (id: string) => {
-  const result = await ImamMuazzin.findOne({ _id: id, isDeleted: false });
-  if (!result) throw new AppError(404, 'তথ্য পাওয়া যায়নি।');
-  return result;
-};
 
 // ── নিযুক্ত করো ──
 const markAsHired = async (id: string) => {
@@ -73,12 +67,6 @@ const createImamMuazzin = async (payload: IImamMuazzin) => {
   return await ImamMuazzin.create(payload);
 };
 
-const updateImamMuazzin = async (id: string, payload: Partial<IImamMuazzin>) => {
-  const result = await ImamMuazzin.findByIdAndUpdate(id, payload, { new: true });
-  if (!result) throw new AppError(404, 'তথ্য পাওয়া যায়নি।');
-  return result;
-};
-
 const deleteImamMuazzin = async (id: string) => {
   const result = await ImamMuazzin.findByIdAndUpdate(
     id, { isDeleted: true }, { new: true }
@@ -89,10 +77,8 @@ const deleteImamMuazzin = async (id: string) => {
 
 export const ImamMuazzinService = {
   getAllImamMuazzin,
-  getSingleImamMuazzin,
   markAsHired,
   markAsAvailable,
   createImamMuazzin,
-  updateImamMuazzin,
   deleteImamMuazzin,
 };

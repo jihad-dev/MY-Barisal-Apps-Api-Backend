@@ -15,15 +15,7 @@ const getAll = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-const getSingle = catchAsync(async (req: Request, res: Response) => {
-  const result = await ImamMuazzinService.getSingleImamMuazzin(req.params.id);
-  sendResponse(res, {
-    statusCode: 200,
-    success: true,
-    message: 'তথ্য সফলভাবে পাওয়া গেছে।',
-    data: result,
-  });
-});
+
 
 const markAsHired = catchAsync(async (req: Request, res: Response) => {
   const result = await ImamMuazzinService.markAsHired(req.params.id);
@@ -55,16 +47,6 @@ const create = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-const update = catchAsync(async (req: Request, res: Response) => {
-  const result = await ImamMuazzinService.updateImamMuazzin(req.params.id, req.body);
-  sendResponse(res, {
-    statusCode: 200,
-    success: true,
-    message: 'তথ্য সফলভাবে আপডেট হয়েছে।',
-    data: result,
-  });
-});
-
 const remove = catchAsync(async (req: Request, res: Response) => {
   const result = await ImamMuazzinService.deleteImamMuazzin(req.params.id);
   sendResponse(res, {
@@ -77,10 +59,8 @@ const remove = catchAsync(async (req: Request, res: Response) => {
 
 export const ImamMuazzinController = {
   getAll,
-  getSingle,
   markAsHired,
   markAsAvailable,
   create,
-  update,
   remove,
 };
