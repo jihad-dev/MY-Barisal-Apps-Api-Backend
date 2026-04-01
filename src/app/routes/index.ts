@@ -41,7 +41,7 @@ const moduleRoutes = [
         route: ImamMuazzinRoutes
     },
     {
-        path: '/donar',
+        path: '/donars',
         route: DonorRoutes
     }
 
