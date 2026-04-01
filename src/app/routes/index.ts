@@ -6,6 +6,7 @@ import { HospitalRoutes } from "../modules/Hospitals/hospital.route";
 import { AmbulanceRoutes } from "../modules/Ambulance/ambulance.route";
 import { NewsRoutes } from "../modules/News/news.routes";
 import { EsebaRoutes } from "../modules/E-seba/e-sheba.route";
+import { ImamMuazzinRoutes } from "../modules/imam-muazzin/imam-muazzin.route";
 
 const router = Router();
 
@@ -34,6 +35,10 @@ const moduleRoutes = [
         path: '/e-seba',
         route: EsebaRoutes
     },
+    {
+        path: '/imam-muazzin',
+        route: ImamMuazzinRoutes
+    }
 
 ];
 

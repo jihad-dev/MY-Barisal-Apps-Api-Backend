@@ -8,6 +8,9 @@ const createEsebaZodSchema = z.object({
         required_error: "Image is required",
       })
       .url("Image must be a valid URL"),
+     title: z.string({
+        required_error: "Title is required",
+      }),
 
     link: z
       .string({
