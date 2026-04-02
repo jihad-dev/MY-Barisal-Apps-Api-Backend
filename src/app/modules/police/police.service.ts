@@ -13,6 +13,7 @@ const getAllPoliceFromDB = async (query: Record<string, unknown>) => {
     $or: [
       { thanaName: { $regex: searchTerm, $options: 'i' } },
       { location: { $regex: searchTerm, $options: 'i' } },
+      { ocName: { $regex: searchTerm, $options: 'i' } }, // <--- ওসির নাম দিয়েও সার্চ করা যাবে
     ],
   });
   return result;

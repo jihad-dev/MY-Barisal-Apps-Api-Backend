@@ -5,6 +5,7 @@ const policeSchema = new Schema<IPolice>(
   {
     thanaName: { type: String, required: true },
     location: { type: String, required: true },
+    ocName: { type: String, required: true },   // <--- নতুন যোগ করা হয়েছে
     ocNumber: { type: String, required: true },
     dutyOfficer: { type: String, required: true },
     controlRoom: { type: String },
@@ -12,7 +13,6 @@ const policeSchema = new Schema<IPolice>(
   },
   { timestamps: true }
 );
-
 // সফট ডিলিট ফিল্টার
 policeSchema.pre('find', function (next) {
   this.find({ isDeleted: { $ne: true } });
