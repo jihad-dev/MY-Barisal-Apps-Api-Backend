@@ -9,6 +9,7 @@ import { EsebaRoutes } from "../modules/E-seba/e-sheba.route";
 import { ImamMuazzinRoutes } from "../modules/imam-muazzin/imam-muazzin.route";
 import { DonorRoutes } from "../modules/Donar/donor.route";
 import { FireServiceRoutes } from "../modules/FireService/fire-service.route";
+import { BankRoutes } from "../modules/Bank/bank.route";
 
 const router = Router();
 
@@ -48,6 +49,10 @@ const moduleRoutes = [
     {
         path: '/fire-service',
         route: FireServiceRoutes
+    },
+    {
+        path: '/bank',
+        route: BankRoutes
     }
 
 ];
