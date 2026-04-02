@@ -10,6 +10,7 @@ import { ImamMuazzinRoutes } from "../modules/imam-muazzin/imam-muazzin.route";
 import { DonorRoutes } from "../modules/Donar/donor.route";
 import { FireServiceRoutes } from "../modules/FireService/fire-service.route";
 import { BankRoutes } from "../modules/Bank/bank.route";
+import { DoctorRoutes } from "../modules/Doctor/doctor.route";
 
 const router = Router();
 
@@ -53,7 +54,11 @@ const moduleRoutes = [
     {
         path: '/bank',
         route: BankRoutes
-    }
+    },
+    {
+        path: '/doctors',
+        route: DoctorRoutes
+    },
 
 ];
 
