@@ -11,6 +11,7 @@ import { DonorRoutes } from "../modules/Donar/donor.route";
 import { FireServiceRoutes } from "../modules/FireService/fire-service.route";
 import { BankRoutes } from "../modules/Bank/bank.route";
 import { DoctorRoutes } from "../modules/Doctor/doctor.route";
+import { PoliceRoutes } from "../modules/police/police.route";
 
 const router = Router();
 
@@ -58,6 +59,10 @@ const moduleRoutes = [
     {
         path: '/doctors',
         route: DoctorRoutes
+    },
+    {
+        path: '/police',
+        route: PoliceRoutes
     },
 
 ];
