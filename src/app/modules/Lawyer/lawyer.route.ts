@@ -13,7 +13,7 @@ router.get('/', LawyerController.getAllLawyers);
 
 // Admin only
 router.post(
-  '/',
+  '/add-lawyer',
   auth(['admin', 'superAdmin']),
   validateRequest(LawyerValidation.createLawyerSchema),
   LawyerController.createLawyer
