@@ -14,6 +14,7 @@ import { DoctorRoutes } from "../modules/Doctor/doctor.route";
 import { PoliceRoutes } from "../modules/police/police.route";
 import { LawyerRoutes } from "../modules/Lawyer/lawyer.route";
 import { InstitutionRoutes } from "../modules/Institution/institution.route";
+import { RentCarRoutes } from "../modules/rent-car/rent-car.route";
 
 const router = Router();
 
@@ -73,6 +74,10 @@ const moduleRoutes = [
     {
         path: '/institutions',
         route: InstitutionRoutes
+    },
+    {
+        path: '/rent-cars',
+        route: RentCarRoutes
     },
 
 ];
