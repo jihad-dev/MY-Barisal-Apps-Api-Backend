@@ -5,7 +5,7 @@ const createInstitutionSchema = z.object({
   body: z.object({
     name:    z.string({ required_error: 'নাম দিন' }).min(1),
     type:    z.enum(
-      ['primary_school', 'high_school', 'college', 'masjid', 'madrasa', 'mandir'],
+      ['primary_school', 'high_school', 'college', 'masjid', 'madrasa', 'mandir','university'],
       { required_error: 'ধরন দিন' }
     ),
     status:        z.enum(['active', 'inactive']).optional(),
@@ -21,7 +21,7 @@ const createInstitutionSchema = z.object({
 const updateInstitutionSchema = z.object({
   body: z.object({
     name:          z.string().min(1).optional(),
-    type:          z.enum(['primary_school', 'high_school', 'college', 'masjid', 'madrasa', 'mandir']).optional(),
+    type:          z.enum(['primary_school', 'high_school', 'college', 'masjid', 'madrasa', 'mandir','university']).optional(),
     status:        z.enum(['active', 'inactive']).optional(),
     area:          z.string().min(1).optional(),
     upazila:       z.string().min(1).optional(),

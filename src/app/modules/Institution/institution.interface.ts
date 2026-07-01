@@ -5,6 +5,7 @@ export type TInstitutionType =
   | 'college'
   | 'masjid'
   | 'madrasa'
+  | 'university'
   | 'mandir';
 
 export type TInstitutionStatus = 'active' | 'inactive';

@@ -7,7 +7,7 @@ const institutionSchema = new Schema<IInstitution>(
     name: { type: String, required: true },
     type: {
       type: String,
-      enum: ['primary_school', 'high_school', 'college', 'masjid', 'madrasa', 'mandir'],
+      enum: ['primary_school', 'high_school', 'college', 'masjid', 'madrasa', 'mandir','university'],
       required: true,
     },
     status:        { type: String, enum: ['active', 'inactive'], default: 'active' },
