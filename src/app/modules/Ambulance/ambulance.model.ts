@@ -11,7 +11,8 @@ const ambulanceSchema = new Schema<IAmbulance>(
       required: true,
     },
     area: { type: String, required: true },
-    phone: [{ type: String, required: true }],
+    thana: { type: String, required: true },
+    phone: [{ type: String, required: true, unique: true }],
     isDeleted: { type: Boolean, default: false },
   },
   { timestamps: true }
