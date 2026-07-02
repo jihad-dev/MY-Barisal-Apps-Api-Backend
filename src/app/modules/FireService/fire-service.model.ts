@@ -8,6 +8,7 @@ const fireServiceSchema = new Schema<IFireService>(
     type:   { type: String, enum: ['government', 'volunteer'], required: true },
     status: { type: String, enum: ['active', 'inactive'], default: 'active' },
     area:   { type: String, required: true },
+    thana:   { type: String, required: true },
     phone:  [{ type: String, required: true }],
     isDeleted: { type: Boolean, default: false },
   },

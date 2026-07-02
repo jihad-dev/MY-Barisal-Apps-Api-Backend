@@ -7,6 +7,7 @@ export interface IFireService {
     type: TFireServiceType;
     status: TFireServiceStatus;
     area: string;
+    thana:string;
     phone: string[];
     isDeleted: boolean;
 }

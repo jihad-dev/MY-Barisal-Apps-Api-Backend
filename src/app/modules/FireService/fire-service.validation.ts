@@ -9,6 +9,7 @@ const createFireServiceSchema = z.object({
     }),
     status: z.enum(['active', 'inactive']).optional(),
     area:   z.string({ required_error: 'এলাকা দিন' }).min(1),
+    thana:   z.string({ required_error: 'thana  দিন' }).min(1),
     phone:  z.array(z.string()).min(1, 'কমপক্ষে একটি নম্বর দিন'),
   }),
 });
