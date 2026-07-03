@@ -16,7 +16,7 @@ const rentCarSchema = new Schema<IRentCar>(
     carTypes: [{ type: String, enum: CAR_TYPES }],
     serviceArea: { type: String, required: true },
     area: { type: String, required: true },
-    upazila: { type: String, required: true },
+    thana: { type: String, required: true },
     phone: [{ type: String, required: true }],
     whatsapp: { type: String },
     rentPerDay: { type: Number },
