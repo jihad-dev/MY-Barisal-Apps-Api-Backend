@@ -8,7 +8,7 @@ export interface IImamMuazzin {
   role: TRole;
   phone: string;
   district: string;
-  upazila: string;
+  thana: string;
   union?: string;
   village: string;
   employmentStatus: TEmploymentStatus;

@@ -12,7 +12,7 @@ const imamMuazzinSchema = new Schema<IImamMuazzin>(
     },
     phone: { type: String, required: true, unique: true },
     district: { type: String, required: true },
-    upazila: { type: String, required: true },
+    thana: { type: String, required: true },
     union: { type: String },
     village: { type: String, required: true },
     employmentStatus: {
