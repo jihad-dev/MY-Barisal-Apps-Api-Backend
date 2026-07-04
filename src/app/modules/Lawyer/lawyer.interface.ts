@@ -17,6 +17,6 @@ export interface ILawyer {
   area: string;
   address: string;
   phone: string[];
-  experience?: number;
+  experience: number;
   isDeleted: boolean;
 }
