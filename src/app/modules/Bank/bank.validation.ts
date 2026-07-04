@@ -1,3 +1,4 @@
+import { threadId } from 'worker_threads';
 import { z } from 'zod';
 
 const createBankValidationSchema = z.object({
@@ -18,6 +19,9 @@ const createBankValidationSchema = z.object({
     address: z.string({
       required_error: 'ব্যাংকের সঠিক ঠিকানা প্রয়োজন',
     }),
+    thana: z.string({
+      required_error: 'Thana সঠিক ঠিকানা প্রয়োজন',
+    }),
 
     phone: z.array(
       z.string().regex(/^(?:\+88|88)?(01[3-9]\d{8})$/, 'সঠিক বাংলাদেশি মোবাইল নম্বর দিন')
@@ -34,6 +38,7 @@ const updateBankValidationSchema = z.object({
     branch: z.string().optional(),
     routingNumber: z.string().length(9).optional(),
     address: z.string().optional(),
+    thana: z.string().optional(),
     phone: z.array(z.string()).optional(),
     isDeleted: z.boolean().optional(),
   }),

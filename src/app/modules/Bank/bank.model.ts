@@ -4,6 +4,7 @@ import { IBank } from './bank.interface';
 const bankSchema = new Schema<IBank>(
   {
     name: { type: String, required: true },
+    thana: { type: String, required: true },
     branch: { type: String, required: true },
     routingNumber: { type: String },
     address: { type: String, required: true },
