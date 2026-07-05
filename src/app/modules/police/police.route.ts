@@ -14,5 +14,5 @@ router.post(
 );
 
 router.get('/', PoliceControllers.getAllPolice);
-
+router.delete('/:id', PoliceControllers.deletePolice); 
 export const PoliceRoutes = router;

@@ -8,7 +8,7 @@ const createPoliceIntoDB = async (payload: IPolice) => {
 
 const getAllPoliceFromDB = async (query: Record<string, unknown>) => {
   const searchTerm = query?.searchTerm || '';
-  
+
   const result = await Police.find({
     $or: [
       { thanaName: { $regex: searchTerm, $options: 'i' } },
@@ -18,8 +18,16 @@ const getAllPoliceFromDB = async (query: Record<string, unknown>) => {
   });
   return result;
 };
-
+const deletePoliceFromDB = async (id: string) => {
+  const result = await Police.findByIdAndUpdate(
+    id,
+    { isDeleted: true },
+    { new: true } // এটি আপডেট হওয়া নতুন ডাটাটি রিটার্ন করবে
+  );
+  return result;
+};
 export const PoliceServices = {
   createPoliceIntoDB,
   getAllPoliceFromDB,
+  deletePoliceFromDB
 };

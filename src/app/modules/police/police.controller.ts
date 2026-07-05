@@ -25,7 +25,19 @@ const getAllPolice = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const deletePolice = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params; // রাউট থেকে আইডি নেওয়া হচ্ছে (যেমন: /police/:id)
+  const result = await PoliceServices.deletePoliceFromDB(id);
+
+  sendResponse(res, {
+    statusCode: 200,
+    success: true,
+    message: 'Police station deleted successfully',
+    data: result,
+  });
+});
 export const PoliceControllers = {
   createPolice,
   getAllPolice,
+  deletePolice
 };
