@@ -10,7 +10,7 @@ const app = express();
 // parser
 app.use(express.json());
 app.use(cors({
-    origin: ["http://localhost:5173", "https://ecommerce-frontend-blush-nu.vercel.app"],
+    origin: ["https://my-barisal-apps-admin-panel.vercel.app", "http://localhost:5173"],
     credentials: true,
 }));
 app.use(cookieParser());
