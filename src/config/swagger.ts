@@ -32,8 +32,9 @@ const options: swaggerJsdoc.Options = {
         },
     },
     apis: [
-        './src/app/modules/Donar/**/*.ts',
-        './dist/app/modules/Donar/**/*.js',
+        './src/app/modules/**/*.ts',
+        './src/app/modules/**/*.js',
+        './dist/app/modules/**/*.js',
     ],
 };
 
