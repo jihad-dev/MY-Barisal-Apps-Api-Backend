@@ -12,7 +12,7 @@ const options: swaggerJsdoc.Options = {
         },
         servers: [
             {
-                url: 'https://my-barisal-apps-api-backend.vercel.app', // আপনার লাইভ ব্যাকএন্ড ইউআরএল এখানে দিন (যেমন: Render বা Vercel লিংক)
+                url: 'https://my-barisal-apps-api-backend.vercel.app',
                 description: 'Production Server',
             },
             {
@@ -31,7 +31,6 @@ const options: swaggerJsdoc.Options = {
             },
         },
     },
-    // আপনার রাউট ফাইলগুলোর পাথ যেখানে JSDoc কমেন্টস থাকবে
     apis: [
         './src/app/modules/Donar/donor.route.ts',
     ],
@@ -40,6 +39,18 @@ const options: swaggerJsdoc.Options = {
 const swaggerSpec = swaggerJsdoc(options);
 
 export const setupSwagger = (app: Express) => {
-    app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+    // Vercel-এর জন্য CDN ভিত্তিক স্ট্যাটিক ফাইল অপশন কনফিগারেশন
+    const swaggerOptions = {
+        customCss: '.swagger-ui .topbar { display: none }',
+        customSiteTitle: "MY Barisal API Docs",
+        customJs: [
+            'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-bundle.min.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-standalone-preset.min.js',
+        ],
+        // এটিকে অ্যারে [] থেকে পরিবর্তন করে সিঙ্গেল স্ট্রিং করা হয়েছে
+        customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css',
+    };
+
+    app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, swaggerOptions));
     console.log('📄 Swagger Docs available at /docs');
 };

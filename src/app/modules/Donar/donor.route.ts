@@ -30,7 +30,6 @@
 
 // export const DonorRoutes = router;
 
-
 import express from 'express';
 import validateRequest from '../../middlewares/validateRequest';
 import { DonorValidations } from './donor.validation';
@@ -62,6 +61,7 @@ const router = express.Router();
  *               - bloodGroup
  *               - phone
  *               - address
+ *               - area
  *             properties:
  *               name:
  *                 type: string
@@ -75,11 +75,14 @@ const router = express.Router();
  *               address:
  *                 type: string
  *                 example: "Barisal Sadar"
+ *               area:
+ *                 type: string
+ *                 example: "Sadar Road"
  *     responses:
  *       201:
  *         description: Donor registered successfully
  *       400:
- *         description: Validation error or bad request
+ *         description: Validation error or missing required fields
  */
 router.post(
   '/register',
@@ -106,6 +109,12 @@ router.post(
  *           type: string
  *         required: false
  *         description: Filter donors by location/address
+ *       - in: query
+ *         name: area
+ *         schema:
+ *           type: string
+ *         required: false
+ *         description: Filter donors by area
  *     responses:
  *       200:
  *         description: List of blood donors retrieved successfully
@@ -143,6 +152,9 @@ router.get(
  *               phone:
  *                 type: string
  *                 example: "+8801800000000"
+ *               area:
+ *                 type: string
+ *                 example: "Sadar Road"
  *     responses:
  *       200:
  *         description: Donor updated successfully
