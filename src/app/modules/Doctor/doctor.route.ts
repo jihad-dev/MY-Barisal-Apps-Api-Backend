@@ -57,6 +57,8 @@ router.get('/', DoctorControllers.getAllDoctors);
  *             required:
  *               - name
  *               - speciality
+ *               - degree
+ *               - visitingHours
  *               - chamberAddress
  *               - area
  *               - phone
@@ -67,9 +69,15 @@ router.get('/', DoctorControllers.getAllDoctors);
  *               speciality:
  *                 type: string
  *                 example: "Medicine & Cardiology Specialist"
- *               qualification:
+ *               degree:
  *                 type: string
  *                 example: "MBBS, FCPS (Medicine)"
+ *               qualification:
+ *                 type: string
+ *                 example: "Senior Consultant"
+ *               visitingHours:
+ *                 type: string
+ *                 example: "5:00 PM - 9:00 PM (Fri Closed)"
  *               chamberAddress:
  *                 type: string
  *                 example: "Popular Diagnostic Center, Barisal"
@@ -77,17 +85,19 @@ router.get('/', DoctorControllers.getAllDoctors);
  *                 type: string
  *                 example: "Sadar Road, Barisal"
  *               phone:
- *                 type: string
- *                 example: "+8801700000000"
+ *                 type: array
+ *                 items:
+ *                   type: string
+ *                 example: ["+8801700000000", "+8801800000000"]
  *     responses:
  *       201:
  *         description: Doctor added successfully
+ *       400:
+ *         description: Validation error or bad request
  *       401:
  *         description: Unauthorized access (Token missing or invalid)
  *       403:
  *         description: Forbidden (Admin privileges required)
- *       400:
- *         description: Validation error or bad request
  */
 router.post(
     '/add-doctor',
