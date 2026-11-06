@@ -32,7 +32,10 @@ const getAllDoctorsFromDB = async (query: Record<string, unknown>) => {
 };
 
 const deleteDoctorFromDB = async (id: string) => {
-  const result = await Doctor.findByIdAndUpdate(id);
+  const result = await Doctor.findByIdAndUpdate(id,
+    { isDeleted: true },
+    { new: true }
+  );
   return result;
 };
 
