@@ -15,7 +15,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/v1/fire-services:
+ * /api/v1/fire-service:
  *   get:
  *     summary: Get all fire service stations (with optional filtering)
  *     tags: [Fire Services (Sub-feature)]
@@ -36,7 +36,7 @@ router.get('/', FireServiceController.getAllFireServices);
 
 /**
  * @swagger
- * /api/v1/fire-services/create:
+ * /api/v1/fire-service/create:
  *   post:
  *     summary: Add a new fire service station (Admin / Super Admin only)
  *     tags: [Fire Services (Sub-feature)]
@@ -96,7 +96,7 @@ router.post(
 
 /**
  * @swagger
- * /api/v1/fire-services/{id}:
+ * /api/v1/fire-service/{id}:
  *   delete:
  *     summary: Delete a fire service station entry (Admin / Super Admin only)
  *     tags: [Fire Services (Sub-feature)]
