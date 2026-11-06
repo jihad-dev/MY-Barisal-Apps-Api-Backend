@@ -130,7 +130,7 @@ router.get('/', AmbulanceController.getAllAmbulances);
  */
 router.post(
     '/add-ambulance',
-    auth(['admin', 'superAdmin']),
+    // auth(['admin', 'superAdmin']),
     validateRequest(createAmbulanceValidationSchema), // জড ভ্যালিডেশন মিডেলওয়্যার এখানে যুক্ত করা হয়েছে
     AmbulanceController.createAmbulance
 );
@@ -160,6 +160,8 @@ router.post(
  *       404:
  *         description: Ambulance not found
  */
-router.delete('/:id', auth(['admin', 'superAdmin']), AmbulanceController.deleteAmbulance);
+router.delete('/:id', 
+    // auth(['admin', 'superAdmin']),
+     AmbulanceController.deleteAmbulance);
 
 export const AmbulanceRoutes = router;

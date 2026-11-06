@@ -5,10 +5,12 @@ import { Express } from 'express';
 const options: swaggerJsdoc.Options = {
     definition: {
         openapi: '3.0.0',
-        info: {
+       info: {
             title: 'MY Barisal API Documentation',
             version: '1.0.0',
-            description: 'Backend API documentation for MY Barisal Directory & Admin Panel, built with Node.js, Express, and MongoDB.',
+            description: `Backend API documentation for MY Barisal Directory & Admin Panel, built with Node.js, Express, and MongoDB.
+
+> ⚠️ ALERT : All admin routes are enabled for the Recruiter to test!`,
         },
         tags: [
             {

@@ -91,7 +91,7 @@ router.get('/', DoctorControllers.getAllDoctors);
  */
 router.post(
     '/add-doctor',
-    auth(['admin', 'superAdmin']),
+    // auth(['admin', 'superAdmin']),
     validateRequest(DoctorValidations.createDoctorValidationSchema),
     DoctorControllers.createDoctor
 );
@@ -123,7 +123,7 @@ router.post(
  */
 router.delete(
     '/:id',
-    auth(['admin', 'superAdmin']),
+    // auth(['admin', 'superAdmin']),
     DoctorControllers.deleteDoctor
 );
 

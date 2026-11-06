@@ -89,7 +89,7 @@ router.get('/', FireServiceController.getAllFireServices);
  */
 router.post(
     '/create',
-    auth(['admin', 'superAdmin']),
+    // auth(['admin', 'superAdmin']),
     validateRequest(FireServiceValidation.createFireServiceSchema),
     FireServiceController.createFireService
 );
@@ -121,7 +121,7 @@ router.post(
  */
 router.delete(
     '/:id',
-    auth(['admin', 'superAdmin']),
+    // auth(['admin', 'superAdmin']),
     FireServiceController.deleteFireService
 );
 
