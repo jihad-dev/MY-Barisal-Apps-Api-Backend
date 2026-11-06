@@ -10,6 +10,24 @@ const options: swaggerJsdoc.Options = {
             version: '1.0.0',
             description: 'Backend API documentation for MY Barisal Directory & Admin Panel, built with Node.js, Express, and MongoDB.',
         },
+        tags: [
+            {
+                name: 'Blood Donors (Core Feature)',
+                description: 'Blood donor registration, listing, and management endpoints',
+            },
+            {
+                name: 'Ambulance Services (Sub-feature)',
+                description: 'Emergency ambulance listing and management endpoints',
+            },
+            {
+                name: 'Doctor Services (Sub-feature)',
+                description: 'Emergency doctor listing and management endpoints',
+            },
+            {
+                name: 'Fire Services (Sub-feature)',
+                description: 'Emergency fire service station listing and management endpoints',
+            },
+        ],
         servers: [
             {
                 url: 'https://my-barisal-apps-api-backend.vercel.app',

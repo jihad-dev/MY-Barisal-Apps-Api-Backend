@@ -31,7 +31,13 @@ const getAllDoctorsFromDB = async (query: Record<string, unknown>) => {
   return result;
 };
 
+const deleteDoctorFromDB = async (id: string) => {
+  const result = await Doctor.findByIdAndUpdate(id);
+  return result;
+};
+
 export const DoctorServices = {
   createDoctorIntoDB,
   getAllDoctorsFromDB,
+  deleteDoctorFromDB
 };

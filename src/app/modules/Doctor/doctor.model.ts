@@ -7,7 +7,7 @@ const doctorSchema = new Schema<IDoctor>(
     speciality: { type: String, required: true },
     degree: { type: String, required: true },
     experience: { type: String },
-    area: { type: String, required: true }, // 💡 নতুন ফিল্ড যুক্ত এবং রিকোয়ার্ড করা হলো
+    area: { type: String, required: true },
     chamberAddress: { type: String, required: true },
     visitingHours: { type: String, required: true },
     phone: { type: [String], required: true },
@@ -22,7 +22,7 @@ doctorSchema.pre('find', function (next) {
   next();
 });
 
-// findOne ব্যবহার করলেও যাতে ডিলিট হওয়া ডাটা না আসে তার জন্য আরেকটি মিডলওয়্যার (ঐচ্ছিক কিন্তু সেফ)
+// findOne ব্যবহার করলেও যাতে ডিলিট হওয়া ডাটা না আসে তার জন্য আরেকটি মিডলওয়্যার 
 doctorSchema.pre('findOne', function (next) {
   this.find({ isDeleted: { $ne: true } });
   next();
